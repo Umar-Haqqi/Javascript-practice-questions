@@ -12,7 +12,7 @@ console.log("original Array: " + myArr);
 
 const cloneArr = (arr) => {
     let newArr = [];
-    arr.forEach((elem) => {
+    arr.map((elem) => {
         newArr.push(elem);
     });
     return newArr;
