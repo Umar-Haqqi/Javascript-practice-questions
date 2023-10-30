@@ -160,9 +160,31 @@ function CheckDuplicateWithReduce(arr) {
         return ans
     }, [])
 }
-console.log(CheckDuplicateWithReduce(myArr4));
+// console.log(CheckDuplicateWithReduce(myArr4));
 // console.log(myArr4);
 
+
+
+// concating a array/ merge two arrays
+const mergeArrfunc = (arr1, arr2) => {  
+
+    // modify the arr1
+    // arr1.push(...arr2)
+    // return arr1
+
+    // not to mofidy the array, arr2 element will go into arr1
+    // return [...arr1,...arr2] 
+
+    // concat
+    return arr1.concat(...arr2)
+    
+}
+const merArr1 = [1]
+const merArr2 = [2, 3]
+const mergeArrResult = mergeArrfunc(merArr1, merArr2);
+console.log("Merged Array: " + mergeArrResult)
+console.log("Array 1: " + merArr1);
+console.log("Array 2: " + merArr2);
 
 
 
