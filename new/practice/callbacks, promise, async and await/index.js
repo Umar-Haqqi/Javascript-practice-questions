@@ -66,7 +66,7 @@ function createUserData(addData) {
 async function start() {
     // it will wait untill createUserData is completing
     await createUserData({ name: "Bilal", profession: "Digital marketing" })
-    getData(); 
+    getData(); // then call this fucntion
 }
 start()
 
