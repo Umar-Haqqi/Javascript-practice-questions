@@ -38,17 +38,53 @@ const getData = () => {
 getData();
 
 
+
+
+// Promise
+function createUserData(addData) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            userData.push(addData)
+
+            let error = false; // means no error
+            if (!error) {
+                resolve();
+            }
+            else {
+                reject("Error: Some problem...")
+            }
+        }, 2000);
+    })
+}
+// createUserData({ name: "Ahmed", profession: "Digital marketing" })
+// .then(getData)
+// .catch(error => console.log(error))
+
+
+
+// async & await
+async function start() {
+    // it will wait untill createUserData is completing
+    await createUserData({ name: "Bilal", profession: "Digital marketing" })
+    getData(); 
+}
+start()
+
+
+
+
 // it will not display the new data if its timeout is greater then getData function
 // to aviod this problem we will use callback
 
-function createUserData(addData, callback) {
-    setTimeout(() => {
-        userData.push(addData)
+// function createUserData(addData, callback) {
+//     setTimeout(() => {
+//         userData.push(addData)
 
-        callback() // calling getdata function here
-        
-    }, 3000);
-}
+//         callback() // calling getdata function here
+
+//     }, 3000);
+// }
 // createUserData({ name: "Ali", profession: "Digital marketing" })
-createUserData({ name: "Ali", profession: "Digital marketing" }, getData) // passing getData reference here
-createUserData({ name: "Ahmad", profession: "Digital marketing" }, getData)
+// createUserData({ name: "Ali", profession: "Digital marketing" }, getData) // passing getData reference here
+
+
