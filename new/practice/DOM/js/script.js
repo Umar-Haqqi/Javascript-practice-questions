@@ -1,25 +1,15 @@
-const box = document.querySelector('#box');
-console.log("before: ", box.classList);    // DOMTokenList is a list but it is an array
+const btn = document.querySelector('#btn');
 
+function click1(){
+    console.log("click 1");
+}
+function click2(){
+    console.log("click 2");
+}
 
-// add a class
-box.classList.add('color','dimension')
-console.log("after: ", box.classList);
+// just passing function reference, if call function here like click1(), then it will be called and will print in console without clicking btn, means click event listener will not work
+btn.addEventListener('click',click1)
+btn.addEventListener('click',click2)
+// btn.addEventListener('click',click2())   see the difference
 
-
-// remove a class
-box.classList.remove('dimension')
-
-
-// check if there is a class or not
-let checkClass = box.classList.contains('color')
-console.log(checkClass);
-
-
-// toggle class add/remove
-box.classList.toggle('dimension')
-
-
-// for (const css of box.classList) {
-//     console.log(css);
-// }
+btn.removeEventListener('click',click2)
