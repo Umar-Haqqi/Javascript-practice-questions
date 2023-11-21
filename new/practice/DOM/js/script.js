@@ -1,21 +1,25 @@
-const elem = document.querySelector('.para')
-const p = document.createElement('h1');
-
-p.className = "heading";
-p.id = "headingID";
-
-const text = document.createTextNode("hello hello");
-p.appendChild(text)
-elem.appendChild(p)
+const box = document.querySelector('#box');
+console.log("before: ", box.classList);    // DOMTokenList is a list but it is an array
 
 
-// how to read an element
-const main_heading = document.querySelector('#main-heading')
-console.log(main_heading.textContent);
+// add a class
+box.classList.add('color','dimension')
+console.log("after: ", box.classList);
 
 
-// add a new list item
-const list = document.querySelector('.list')
-const li = document.createElement('li')
-li.textContent = "new 4"
-list.appendChild(li)
+// remove a class
+box.classList.remove('dimension')
+
+
+// check if there is a class or not
+let checkClass = box.classList.contains('color')
+console.log(checkClass);
+
+
+// toggle class add/remove
+box.classList.toggle('dimension')
+
+
+// for (const css of box.classList) {
+//     console.log(css);
+// }
